@@ -1,0 +1,13 @@
+
+<?php
+$content = $this->_getProductCollection('ASC');
+
+$newContent = '';
+foreach ($content as $product){
+    $newContent = $newContent.$product;
+}
+
+
+?>
+<button onclick="reverseEls(document.getElementById('main-container'))">Reverse</button>
+<div id="main-container"><?php echo $newContent;?></div>

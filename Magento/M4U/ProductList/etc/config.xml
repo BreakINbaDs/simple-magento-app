@@ -1,0 +1,32 @@
+<config>
+<modules>
+    <m4u_productlist>
+        <version>0.1.0</version>
+    </m4u_productlist>
+</modules>
+<frontend>
+    <routers>
+        <productlist>
+            <use>standard</use>
+            <args>
+                <module>M4U_ProductList</module>
+                <frontName>productlist</frontName>
+            </args>
+        </productlist>
+    </routers>
+    <layout>
+        <updates>
+            <productlist>
+                <file>productlist.xml</file>
+            </productlist>
+        </updates>
+    </layout>
+</frontend>
+<global>
+    <blocks>
+        <productlist>
+            <class>M4U_ProductList_Block</class>
+        </productlist>
+    </blocks>
+</global>
+</config>

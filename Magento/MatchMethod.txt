@@ -1,0 +1,30 @@
+The match function in "/app/code/core/Mage/Core/
+Controller/Varien/Router/Standard.php" is a method of the one of
+four main router classes in Magento - the Standart router.
+The Standard router is the object used to handle frontend Magento area.
+Actually the Standart router as router object has three main responsibilities:
+
+  1. Provide a "match" method which functionality I will describe.
+
+  2. Mark the request object as dispatched.
+
+  3. Set the body/contents of the request object.
+
+The goal of  Standard router object’s match method is to examine a request URL and
+based on its component parts determine which Magento module might contain an appropriate controller,
+then choose the most appropriate controller in the module we should use, after that
+determine which controller's action should be called, and finally tell the controller to dispatch that action.
+
+If the request object for a module name returns nothing, the Magento
+takes URL, for example, "http://127.0.0.1:8888/magento/catalog/category/view/id/8", and splits it into next components:
+  1) "catalog"
+  2) "category"
+  3) "view"
+  4) "id"
+  5) "8"
+Then "catalog" is set to be a module name, "category" - controller name, "view" - action. When we got our "module name" +
++ "controller name" + "action" Magento checks if this place (./madule_name/controller_name/action) is secure.
+If everything is okey and controller class has been instantiated then the "id" parameter is set to "3" and
+action is dispatched.
+(If the URL is empty like this "http://127.0.0.1:8888/", Magento will take default path information.
+This is where CMS Index Controller starts to act.)
